@@ -1,13 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function TodoListItem({todo}) {
+function TodoItem(props) {
   return (
     <li>
       <label>
-        <input type="checkbox" defaultChecked={todo.isComplete}/>{todo.name}
+        <input type="checkbox" defaultChecked={props.isComplete}/>{props.name}
       </label>
     </li>
   );
 }
 
-export default TodoListItem;
+TodoItem.propTypes = {
+  id:         PropTypes.number.isRequired,
+  name:       PropTypes.string.isRequired,
+  isComplete: PropTypes.bool
+};
+
+export default TodoItem;
