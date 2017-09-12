@@ -7,7 +7,10 @@ import {
 } from './components/todo';
 import {
   addTodo,
-  generateId
+  generateId,
+  findById,
+  toggleTodo,
+  updateTodo
 } from './lib/todoHelpers'
 
 class App extends Component {
@@ -80,6 +83,13 @@ class App extends Component {
   }
 
   handleInputChange = (e) => this.setState({currentTodo: e.target.value})
+
+  handleToggle = (id) => {
+    const todo         = findById(id, this.state.todos);
+    const toggled      = toggleTodo(todo);
+    const updatedTodos = updateTodo(this.state.todos, toggled);
+    this.setState({todos: updatedTodos})
+  }
 
 }
 
