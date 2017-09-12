@@ -43,16 +43,20 @@ class App extends Component {
 
     return (
       <div className="App">
+
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo"/>
           <h2>React Todos</h2>
         </div>
+
         <div className="Todo-App">
+
           {this.state.errorMessage && <span className="error">{this.state.errorMessage}</span>}
+
           <TodoForm handleInputChange={this.handleInputChange} currentTodo={this.state.currentTodo}
                     handleSubmit={handleSubmit}/>
 
-          <TodoList todos={this.state.todos}/>
+          <TodoList handleToggle={this.handleToggle} todos={this.state.todos}/>
 
         </div>
       </div>
