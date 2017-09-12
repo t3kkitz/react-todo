@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 export function TodoForm(props) {
   return (
-    <form>
+    <form onSubmit={props.handleSubmit}>
       <input type="text" value={props.currentTodo} onChange={props.handleInputChange}/>
     </form>
   );
@@ -11,5 +11,6 @@ export function TodoForm(props) {
 
 TodoForm.propTypes = {
   currentTodo:       PropTypes.string.isRequired,
-  handleInputChange: PropTypes.func.isRequired
+  handleInputChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired
 }

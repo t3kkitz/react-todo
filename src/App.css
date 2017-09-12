@@ -29,6 +29,11 @@
   display:     inline-block;
 }
 
+.error {
+  font-size: 13px;
+  color:     red;
+}
+
 input {
   font-size: 20px;
 }
@@ -39,5 +44,5 @@ ul {
 
 li {
   list-style-type: none;
-  user-select: none;
+  user-select:     none;
 }
