@@ -5,3 +5,7 @@ export function addTodo(list, item) {
 export function generateId() {
   return Math.floor(Math.random() * 100000)
 }
+
+export function findById(id, list) {
+  return list.find(item => item.id === id)
+}
