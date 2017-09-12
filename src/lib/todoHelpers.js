@@ -9,3 +9,10 @@ export function generateId() {
 export function findById(id, list) {
   return list.find(item => item.id === id)
 }
+
+export function toggleTodo(todo) {
+  return {
+    ...todo,
+    isComplete: !todo.isComplete
+  }
+}
