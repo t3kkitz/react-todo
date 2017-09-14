@@ -27,5 +27,5 @@ export function updateTodo(list, updated) {
 }
 
 export function removeTodo(list, id) {
-  return list.filter(l => l.id !== id)
+  return list.filter(item => item.id !== id)
 }

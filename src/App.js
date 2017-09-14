@@ -10,7 +10,8 @@ import {
   generateId,
   findById,
   toggleTodo,
-  updateTodo
+  updateTodo,
+  removeTodo
 } from './lib/todoHelpers'
 
 class App extends Component {
@@ -56,7 +57,7 @@ class App extends Component {
           <TodoForm handleInputChange={this.handleInputChange} currentTodo={this.state.currentTodo}
                     handleSubmit={handleSubmit}/>
 
-          <TodoList handleToggle={this.handleToggle} todos={this.state.todos}/>
+          <TodoList handleToggle={this.handleToggle} handleRemove={this.handleRemove} todos={this.state.todos}/>
 
         </div>
       </div>
@@ -92,6 +93,11 @@ class App extends Component {
     const todo         = findById(id, this.state.todos);
     const toggled      = toggleTodo(todo);
     const updatedTodos = updateTodo(this.state.todos, toggled);
+    this.setState({todos: updatedTodos})
+  }
+
+  handleRemove = (id) => {
+    const updatedTodos = removeTodo(this.state.todos, id);
     this.setState({todos: updatedTodos})
   }
 
