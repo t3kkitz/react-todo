@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import {
   TodoForm,
-  TodoList
+  TodoList,
+  Footer
 } from './components/todo';
 import {
   addTodo,
@@ -58,6 +59,8 @@ class App extends Component {
                     handleSubmit={handleSubmit}/>
 
           <TodoList handleToggle={this.handleToggle} handleRemove={this.handleRemove} todos={this.state.todos}/>
+
+          <Footer/>
 
         </div>
       </div>

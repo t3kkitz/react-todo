@@ -66,3 +66,7 @@ li {
 li:hover .remove-todo {
   visibility: visible;
 }
+
+.Footer a {
+  margin-right: 8px;
+}
