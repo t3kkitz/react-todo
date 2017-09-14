@@ -25,3 +25,7 @@ export function updateTodo(list, updated) {
     ...list.slice(updatedIndex + 1),
   ]
 }
+
+export function removeTodo(list, id) {
+  return list.filter(l => l.id !== id)
+}
