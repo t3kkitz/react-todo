@@ -50,14 +50,19 @@ li {
 }
 
 .remove-todo {
-  color:    #999999;
-  cursor:   pointer;
-  position: absolute;
-  top:      0;
-  bottom:   0;
-  right:    0;
+  color:      #999999;
+  cursor:     pointer;
+  position:   absolute;
+  top:        0;
+  bottom:     0;
+  right:      0;
+  visibility: hidden;
 }
 
 .remove-todo {
   color: #212121;
+}
+
+li:hover .remove-todo {
+  visibility: visible;
 }
