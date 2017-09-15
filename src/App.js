@@ -18,7 +18,9 @@ import {
 } from './lib/todoHelpers'
 import {
   loadTodos,
-  createTodo
+  createTodo,
+  saveTodo,
+  destroyTodo
 } from './lib/todoService';
 
 class App extends Component {
@@ -106,11 +108,13 @@ class App extends Component {
     const toggled      = toggleTodo(todo);
     const updatedTodos = updateTodo(this.state.todos, toggled);
     this.setState({todos: updatedTodos})
+    saveTodo(toggled).then(() => this.showTempMessage('Todo updated'))
   }
 
   handleRemove = (id) => {
     const updatedTodos = removeTodo(this.state.todos, id);
     this.setState({todos: updatedTodos})
+    destroyTodo(id)
   }
 
 }
