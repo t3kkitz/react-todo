@@ -74,3 +74,6 @@ li:hover .remove-todo {
 a.active {
   font-weight: bold;
 }
+.success{
+  color: green;
+}
