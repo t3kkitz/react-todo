@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 
 export class Link extends Component {
-  propTypes = {
+  static propTypes = {
     to: PropTypes.string.isRequired
   }
 
