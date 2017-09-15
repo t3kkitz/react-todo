@@ -6,13 +6,19 @@ export class Link extends Component {
     to: PropTypes.string.isRequired
   }
 
+  static contextTypes = {
+    route:       PropTypes.string,
+    linkHandler: PropTypes.func
+  }
+
   render() {
-    return <a href="#0" onClick={this.handleClick}>{this.props.children}</a>
+    const activeClass = this.context.route === this.props.to ? 'active' : ''
+    return <a href="#0" className={activeClass} onClick={this.handleClick}>{this.props.children}</a>
   }
 
   handleClick = (e) => {
     e.preventDefault();
-    window.history.pushState(null, '', this.props.to)
+    this.context.linkHandler(this.props.to);
   }
 
 }
