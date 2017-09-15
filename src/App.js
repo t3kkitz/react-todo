@@ -114,7 +114,7 @@ class App extends Component {
   handleRemove = (id) => {
     const updatedTodos = removeTodo(this.state.todos, id);
     this.setState({todos: updatedTodos})
-    destroyTodo(id)
+    destroyTodo(id).then(() => this.showTempMessage('Todo Removed'))
   }
 
 }

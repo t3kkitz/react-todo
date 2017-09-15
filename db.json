@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Learn JSX",
-      "isComplete": true
+      "isComplete": false
     },
     {
       "id": 2,
@@ -11,24 +11,9 @@
       "isComplete": false
     },
     {
-      "id": 3,
-      "name": "Setup server!",
-      "isComplete": true
-    },
-    {
-      "id": 4,
-      "name": "Start Server",
+      "id": 67812,
+      "name": "Start server",
       "isComplete": false
-    },
-    {
-      "id": 5,
-      "name": "Connect to Server",
-      "isComplete": true
-    },
-    {
-      "id": 6,
-      "name": "Setup fetch",
-      "isComplete": true
     }
   ]
 }
