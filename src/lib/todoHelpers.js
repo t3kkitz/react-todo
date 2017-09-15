@@ -29,3 +29,9 @@ export function updateTodo(list, updated) {
 export function removeTodo(list, id) {
   return list.filter(item => item.id !== id)
 }
+
+export function filterTodos(list, filter) {
+  switch(filter){
+
+  }
+}

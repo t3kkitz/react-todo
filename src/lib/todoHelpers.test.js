@@ -194,3 +194,45 @@ test('removeTodo should not mutate original array', () => {
   const result = removeTodo(startTodos, targetId);
   expect(result).not.toBe(startTodos);
 })
+
+test('filterTodos should return all items for the root route', () => {
+  const startTodos = [
+    {id: 1, name: 'one', isComplete: false},
+    {id: 2, name: 'two', isComplete: true},
+    {id: 3, name: 'three', isComplete: false}
+  ]
+  const result     = filterTodos(startTodos, '/')
+  expect(result).toEqual(startTodos)
+})
+
+test('filterTodos should return only completed items for the complete route', () => {
+  const startTodos = [
+    {id: 1, name: 'one', isComplete: false},
+    {id: 2, name: 'two', isComplete: true},
+    {id: 3, name: 'three', isComplete: false}
+  ]
+  const result     = filterTodos(startTodos, '/complete')
+
+  const expected = [
+    {id: 2, name: 'two', isComplete: true}
+  ]
+
+  expect(result).toEqual(expected)
+})
+
+test('filterTodos should return only incompleted items for the active route', () => {
+
+  const startTodos = [
+    {id: 1, name: 'one', isComplete: false},
+    {id: 2, name: 'two', isComplete: true},
+    {id: 3, name: 'three', isComplete: false}
+  ]
+
+  const expected = [
+    {id: 1, name: 'one', isComplete: false},
+    {id: 3, name: 'three', isComplete: false}
+  ]
+
+  const result = filterTodos(startTodos, '/active')
+  expect(result).toEqual(expected)
+})
