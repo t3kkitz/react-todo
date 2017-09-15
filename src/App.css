@@ -72,5 +72,5 @@ li:hover .remove-todo {
 }
 
 a.active {
-  color: red;
+  font-weight: bold;
 }

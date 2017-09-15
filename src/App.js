@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import PropTypes from 'prop-types'
 import './App.css';
 import {
   TodoForm,
@@ -12,7 +13,8 @@ import {
   findById,
   toggleTodo,
   updateTodo,
-  removeTodo
+  removeTodo,
+  filterTodos
 } from './lib/todoHelpers'
 
 class App extends Component {
@@ -38,10 +40,16 @@ class App extends Component {
     currentTodo: ''
   }
 
+  static contextTypes = {
+    route: PropTypes.string,
+  }
+
   render() {
     const handleSubmit = this.state.currentTodo
       ? this.handleSubmit
       : this.handleEmptySubmit;
+
+    const displayTodos = filterTodos(this.state.todos, this.context.route)
 
     return (
       <div className="App">
@@ -58,7 +66,7 @@ class App extends Component {
           <TodoForm handleInputChange={this.handleInputChange} currentTodo={this.state.currentTodo}
                     handleSubmit={handleSubmit}/>
 
-          <TodoList handleToggle={this.handleToggle} handleRemove={this.handleRemove} todos={this.state.todos}/>
+          <TodoList handleToggle={this.handleToggle} handleRemove={this.handleRemove} todos={displayTodos}/>
 
           <Footer/>
 

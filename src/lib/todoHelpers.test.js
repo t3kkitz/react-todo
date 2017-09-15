@@ -3,7 +3,8 @@ import {
   findById,
   toggleTodo,
   updateTodo,
-  removeTodo
+  removeTodo,
+  filterTodos
 } from './todoHelpers';
 
 test('addTodo should add the passed todo to the list', () => {
