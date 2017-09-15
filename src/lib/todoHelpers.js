@@ -34,10 +34,8 @@ export function filterTodos(list, route) {
   switch (route) {
     case '/active':
       return list.filter(item => !item.isComplete)
-      break;
     case '/complete':
       return list.filter(item => item.isComplete)
-      break;
     default:
       return list
   }
