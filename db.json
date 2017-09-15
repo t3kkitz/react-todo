@@ -1,33 +1,33 @@
 {
   "todos": [
     {
-      "id":         1,
-      "name":       "Learn JSX",
+      "id": 1,
+      "name": "Learn JSX",
       "isComplete": true
     },
     {
-      "id":         2,
-      "name":       "Build an awesome app",
+      "id": 2,
+      "name": "Build an awesome app",
       "isComplete": false
     },
     {
-      "id":         3,
-      "name":       "Setup server!",
+      "id": 3,
+      "name": "Setup server!",
       "isComplete": true
     },
     {
-      "id":         4,
-      "name":       "Start Server",
+      "id": 4,
+      "name": "Start Server",
       "isComplete": false
     },
     {
-      "id":         5,
-      "name":       "Connect to Server",
+      "id": 5,
+      "name": "Connect to Server",
       "isComplete": true
     },
     {
-      "id":         6,
-      "name":       "Setup fetch",
+      "id": 6,
+      "name": "Setup fetch",
       "isComplete": false
     }
   ]
